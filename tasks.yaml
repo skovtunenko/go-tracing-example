@@ -1,10 +1,21 @@
 tasks:
-  run:
-    description: Run the application
+  deps:
+    description: Download Go module dependencies
+    steps:
+      - run: go mod download
+
+  up:
+    description: Start supporting Docker services (Redis, Jaeger)
     steps:
       - run: docker compose up -d
-      - run: go run cmd/main.go
+
+  run:
+    description: Start Docker services and run the application locally
+    steps:
+      - run: docker compose up -d
+      - run: go run ./cmd
+
   down:
-    description: Tear down the application
+    description: Tear down the application and Docker services
     steps:
       - run: docker compose down
