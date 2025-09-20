@@ -1,3 +1,7 @@
+# Original Habr article:
+
+[Трейсинг в Go — это просто](https://habr.com/ru/post/710644/)
+
 # Notes service
 
 ```bash
