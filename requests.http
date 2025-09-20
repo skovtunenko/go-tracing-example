@@ -1,0 +1,23 @@
+### To add a new note:
+
+# curl --location --request POST 'localhost:8080/create'
+#--header 'Content-Type: application/json'
+#--data-raw '{
+#    "title":"Something interesting",
+#    "content": "Lorem ipsum..."
+#}'
+POST localhost:8080/create
+Content-Type: application/json
+
+{
+  "title": "Something interesting",
+  "content": "Lorem ipsum..."
+}
+
+### To get a new note:
+
+# curl --location --request GET 'localhost:8080/get?note_id=7411ff79-fd1d-46ab-b9f8-21105cd770ce'
+GET localhost:8080/get?note_id=1d1a0073-1022-462d-88f0-f49894f41906
+
+###
+
