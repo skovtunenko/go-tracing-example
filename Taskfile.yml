@@ -1,0 +1,32 @@
+version: '3'
+
+tasks:
+  init:
+    desc: Initialize the project by downloading Go module dependencies and starting Docker services
+    cmds:
+      - go mod download
+      - docker compose up -d
+    silent: true
+
+  deps:
+    desc: Download Go module dependencies
+    cmds:
+      - go mod download
+    silent: true
+
+  up:
+    desc: Start supporting Docker services (Redis, Jaeger)
+    cmds:
+      - docker compose up -d
+
+  run:
+    desc: Start Docker services and run the application locally
+    cmds:
+      - docker compose up -d
+      - go run ./cmd
+    silent: true
+
+  down:
+    desc: Tear down the application and Docker services
+    cmds:
+      - docker compose down
