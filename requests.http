@@ -14,10 +14,12 @@ Content-Type: application/json
   "content": "Lorem ipsum..."
 }
 
+> {% client.global.set("noteID", response.body.note_id); %}
+
 ### To get a new note:
 
 # curl --location --request GET 'localhost:8080/get?note_id=7411ff79-fd1d-46ab-b9f8-21105cd770ce'
-GET localhost:8080/get?note_id=1d1a0073-1022-462d-88f0-f49894f41906
+GET localhost:8080/get?note_id={{noteID}}
 
 ###
 
